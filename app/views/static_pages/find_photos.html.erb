@@ -1,0 +1,17 @@
+<% if @photos && @photos.size > 0 %>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <% @photos.each do |photo|%>
+        <div class="col-md-6 mb-5">
+          <%= image_tag("http://farm#{photo["farm"]}.staticflickr.com/#{photo["server"]}/#{photo["id"]}_#{photo["secret"]}.jpg", class: "img-fluid", alt: "Responsive image") %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      No photos found for this user, please try again!
+    </div>
+  </div>
+<% end %>
